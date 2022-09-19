@@ -10,6 +10,9 @@ import SwiftUI
 
 struct MyInfoPicture: View {
     var body: some View{
-        Image("timeline_profile_image").resizable().aspectRatio(contentMode:.fit).frame(width: 50,height: 50,alignment: .topLeading)
+        Image("timeline_profile_image")
+            .resizable()
+            .aspectRatio(contentMode:.fit)
+            .frame(width: 50,height: 50,alignment: .topLeading)
     }
 }
