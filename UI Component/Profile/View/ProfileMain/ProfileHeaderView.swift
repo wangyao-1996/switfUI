@@ -9,7 +9,36 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     var body: some View {
-        Text("ProfileHeaderView")
+        HStack{
+            Image("timeline_profile_image")
+                .resizable().circle()
+            VStack(alignment: .leading){
+                Text("桃子猪")
+                    .font(.title2)
+                Text("微信号:XXXXXX")
+                    .foregroundColor(Color.gray)
+            }
+        }
+    }
+}
+
+extension Image {
+    func circle() -> some View {
+        modifier(CircleModifier())
+    }
+}
+
+struct CircleModifier : ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.orange,
+                                lineWidth: 4)
+            }
+            .shadow(radius: 7)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 50,height: 50,alignment: .topLeading)
     }
 }
 
