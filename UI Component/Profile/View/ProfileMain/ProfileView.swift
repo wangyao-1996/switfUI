@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("ProfileView12")
+        HStack{
+            MyInfoPicture()
+            VStack(alignment: .leading){
+                Text("桃子猪")
+                    .font(.title2)
+                Text("微信号:XXXXXX")
+                    .foregroundColor(Color.gray)
+            }
+        }
     }
 }
 
