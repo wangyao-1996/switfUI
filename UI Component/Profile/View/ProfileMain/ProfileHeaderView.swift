@@ -29,16 +29,28 @@ extension Image {
 }
 
 struct CircleModifier : ViewModifier{
+    @State var lineWidth = CGFloat(4)
+    @State var shadowRadius = CGFloat(7)
+    @State var imageSize : [CGFloat] = [50 , 50]
+    
     func body(content: Content) -> some View {
         content
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.orange,
-                                lineWidth: 4)
+                                lineWidth: lineWidth)
             }
-            .shadow(radius: 7)
+            .shadow(radius: shadowRadius)
             .aspectRatio(contentMode: .fit)
-            .frame(width: 50,height: 50,alignment: .topLeading)
+            .frame(width: imageSize[0],height: imageSize[1],alignment: .topLeading)
+            .animation(.default.repeatForever(), value: lineWidth)
+            .animation(.default.repeatForever(), value: shadowRadius)
+            .animation(.default.repeatForever(), value: imageSize)
+            .onAppear{
+                lineWidth = 2
+                shadowRadius = 3
+                imageSize = [30,30]
+            }
     }
 }
 
