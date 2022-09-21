@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		236FB65428D7765C00992658 /* myInfoPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB65328D7765C00992658 /* myInfoPicture.swift */; };
 		23B1F97228DAB735007DBA3A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F97128DAB735007DBA3A /* SettingView.swift */; };
+		23B1F97428DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */; };
 		8EDB1A80279A80F7001600B5 /* UI_ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB1A7F279A80F7001600B5 /* UI_ComponentApp.swift */; };
 		8EDB1A82279A80F7001600B5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB1A81279A80F7001600B5 /* HomeView.swift */; };
 		8EDB1A84279A80FD001600B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDB1A83279A80FD001600B5 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		236FB65328D7765C00992658 /* myInfoPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfoPicture.swift; sourceTree = "<group>"; };
 		23B1F97128DAB735007DBA3A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewForRotation.swift; sourceTree = "<group>"; };
 		8EDB1A7C279A80F7001600B5 /* UI Component.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI Component.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDB1A7F279A80F7001600B5 /* UI_ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ComponentApp.swift; sourceTree = "<group>"; };
 		8EDB1A81279A80F7001600B5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				23B1F97028DAB70F007DBA3A /* ListContent */,
 				B213226C28C748F700281249 /* ProfileHeaderView.swift */,
+				23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */,
 				B213226E28C74A1500281249 /* ProfileView.swift */,
 			);
 			path = ProfileMain;
@@ -253,6 +256,7 @@
 				23B1F97228DAB735007DBA3A /* SettingView.swift in Sources */,
 				B213226F28C74A1500281249 /* ProfileView.swift in Sources */,
 				8EDB1A82279A80F7001600B5 /* HomeView.swift in Sources */,
+				23B1F97428DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift in Sources */,
 				236FB65428D7765C00992658 /* myInfoPicture.swift in Sources */,
 				B213227428C74C8800281249 /* ListItemModel.swift in Sources */,
 				B213226D28C748F700281249 /* ProfileHeaderView.swift in Sources */,

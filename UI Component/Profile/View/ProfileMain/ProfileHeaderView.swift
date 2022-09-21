@@ -8,17 +8,37 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     var body: some View {
         HStack{
             Image("timeline_profile_image")
                 .resizable().circle()
             VStack(alignment: .leading){
-                Text("桃子猪")
+                Text("桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪")
                     .font(.title2)
-                Text("微信号:XXXXXX")
-                    .foregroundColor(Color.gray)
+                    .lineLimit(2)
+                if horizontalSizeClass == .regular{
+                    VStack(alignment: .leading){
+                        HeaderView()
+                    }.lineLimit(1)
+                } else {
+                    HStack{
+                        HeaderView()
+                    }
+                }
             }
         }
+    }
+}
+
+struct HeaderView: View {
+    var body: some View {
+        Text("微信号:XXXXXXXXXXXXXX")
+            .foregroundColor(Color.gray)
+            .fixedSize(horizontal: true, vertical: false)
+        Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
+            .foregroundColor(Color.orange)
+            .lineLimit(1)
     }
 }
 
@@ -56,7 +76,7 @@ struct CircleModifier : ViewModifier{
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView()
+        ProfileHeaderView()//.environment(\.horizontalSizeClass, .regular)
     }
 }
 

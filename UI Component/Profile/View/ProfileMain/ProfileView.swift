@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        NavigationView{
             List(){
                 Section(){
-                    ProfileHeaderView()
+                    ProfileHeaderViewForRatation()
                 }
                 Section(){
                     NavigationLink(
@@ -39,7 +38,6 @@ struct ProfileView: View {
             }
             .navigationTitle("我的")
             .navigationBarTitleDisplayMode(.inline)
-        }
     }
 }
 
@@ -59,6 +57,6 @@ struct ListCell : View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView()//.environment(\.horizontalSizeClass, .compact)
     }
 }
