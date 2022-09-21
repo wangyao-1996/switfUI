@@ -45,11 +45,11 @@ struct CircleModifier : ViewModifier{
             .frame(width: imageSize[0],height: imageSize[1],alignment: .topLeading)
             .animation(.default.repeatForever(), value: lineWidth)
             .animation(.default.repeatForever(), value: shadowRadius)
-            .animation(.default.repeatForever(), value: imageSize)
+            //.animation(.default.repeatForever(), value: imageSize)
             .onAppear{
                 lineWidth = 2
                 shadowRadius = 3
-                imageSize = [30,30]
+                //imageSize = [30,30]
             }
     }
 }
