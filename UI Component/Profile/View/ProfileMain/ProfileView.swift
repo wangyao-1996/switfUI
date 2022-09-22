@@ -16,25 +16,21 @@ struct ProfileView: View {
                 }
                 Section(){
                     NavigationLink(
-                        destination: {EmptyView()},
-                        label: {
+                        destination: {EmptyView()}){
                             ListCell(imageName: "message.and.waveform", optionText: "服务")
-                        })
+                        }
                     NavigationLink(
-                        destination: {EmptyView()},
-                        label: {
+                        destination: {EmptyView()}){
                             ListCell(imageName: "shippingbox",optionText: "收藏")
-                        })
+                        }
                     NavigationLink(
-                        destination: {EmptyView()},
-                        label: {
+                        destination: {EmptyView()}){
                             ListCell(imageName: "menucard",optionText: "卡包")
-                        })
+                        }
                     NavigationLink(
-                        destination: {EmptyView()},
-                        label: {
+                        destination: {EmptyView()}){
                             ListCell(imageName: "gearshape",optionText: "设置")
-                        })
+                        }
                 }
             }
             .navigationTitle("我的")
