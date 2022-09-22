@@ -22,7 +22,7 @@ struct TimelineView: View {
                     TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
                     TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
                     TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程",timeLineImageContent: "timeline_profile_image_lu_photo1")
-                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？",likeArray: ["草莓兔"])
                 }
                 .padding(.horizontal)
             }
@@ -37,17 +37,60 @@ struct TimeLineContent: View {
     var userName: String
     var timeLineTextContent: String
     var timeLineImageContent: String?
+    @State var likeArray: [String] = []
+    @State private var likeIcon: String = "heart"
+    @State private var isMyLike: Bool = false
+    @State var likeBarColor: Color?
+    @State var userNameColor: Color = Color.black
+    
+//    if likeArray.isEmpty{
+//        likeBarColor = Color.white
+//    } else {
+//        likeBarColor = Color.gray
+//    }
+    
+    fileprivate func changeLikeLabelStyle() {
+        
+        if isMyLike == false {
+            likeIcon = "heart.fill"
+            isMyLike = !isMyLike
+            likeArray.append("桃子猪")
+            likeBarColor = Color.gray
+            userNameColor = Color.white
+        } else {
+            likeIcon = "heart"
+            isMyLike = !isMyLike
+            likeArray.remove(at:(likeArray.firstIndex(of: "桃子猪"))!)
+            if likeArray.isEmpty{
+                likeBarColor = Color.white
+            }
+        }
+    }
+    
     var body: some View{
         HStack(alignment:.top){
             Image(profilePicture).resizable().frame(width: 50,height: 50).aspectRatio(contentMode:.fit)
             VStack(alignment: .leading){
-                Text(userName).font(.headline)
-                Spacer()
-                Text(timeLineTextContent)
-                if timeLineImageContent != nil {
+                    Text(userName).font(.headline)
                     Spacer()
-                    Image(timeLineImageContent!).resizable().aspectRatio(contentMode: .fit)
-                }
+                    Text(timeLineTextContent)
+                    if timeLineImageContent != nil {
+                        Spacer()
+                        Image(timeLineImageContent!).resizable().aspectRatio(contentMode: .fit)
+                    }
+                    Spacer()
+                    HStack(){
+                        Button(action:{
+                            changeLikeLabelStyle()
+                        }){
+                            Image(systemName: likeIcon).foregroundColor(.red)
+                        }
+                        ForEach(likeArray,id: \.self){ id in
+                            Text("\(id)").font(.body).foregroundColor(userNameColor)
+                        }
+                        Spacer()
+                    }
+                    .background(likeBarColor)
             }
         }
     }
