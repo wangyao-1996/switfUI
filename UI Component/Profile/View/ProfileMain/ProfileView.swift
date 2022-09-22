@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
+        NavigationView{
             List(){
                 Section(){
                     ProfileHeaderViewForRatation()
@@ -38,6 +39,7 @@ struct ProfileView: View {
             }
             .navigationTitle("我的")
             .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

@@ -37,7 +37,7 @@ struct ProfileHeaderViewForRatation: View {
                     .lineLimit(2)
                 if horizontalSizeClass == .regular{
                     VStack(alignment: .leading){
-                        if orientation.isPortrait{
+                        if orientation.isLandscape{
                             Text("微信号:XXXXXXXXXXXXXX")
                                 .foregroundColor(Color.gray)
                                 .fixedSize(horizontal: true, vertical: false)
