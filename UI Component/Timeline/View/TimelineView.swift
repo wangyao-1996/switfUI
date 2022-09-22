@@ -40,30 +40,16 @@ struct TimeLineContent: View {
     @State var likeArray: [String] = []
     @State private var likeIcon: String = "heart"
     @State private var isMyLike: Bool = false
-    @State var likeBarColor: Color?
-    @State var userNameColor: Color = Color.black
-    
-//    if likeArray.isEmpty{
-//        likeBarColor = Color.white
-//    } else {
-//        likeBarColor = Color.gray
-//    }
     
     fileprivate func changeLikeLabelStyle() {
-        
         if isMyLike == false {
             likeIcon = "heart.fill"
             isMyLike = !isMyLike
             likeArray.append("桃子猪")
-            likeBarColor = Color.gray
-            userNameColor = Color.white
         } else {
             likeIcon = "heart"
             isMyLike = !isMyLike
             likeArray.remove(at:(likeArray.firstIndex(of: "桃子猪"))!)
-            if likeArray.isEmpty{
-                likeBarColor = Color.white
-            }
         }
     }
     
@@ -85,12 +71,14 @@ struct TimeLineContent: View {
                         }){
                             Image(systemName: likeIcon).foregroundColor(.red)
                         }
+                        
                         ForEach(likeArray,id: \.self){ id in
-                            Text("\(id)").font(.body).foregroundColor(userNameColor)
+                            Text("\(id)").font(.body).foregroundColor(Color.white)
                         }
+                        
                         Spacer()
                     }
-                    .background(likeBarColor)
+                    .background(.gray)
             }
         }
     }
