@@ -12,9 +12,19 @@ struct TimelineView: View {
         ScrollView(){
             VStack(alignment: .leading){
                 TimelineHeaderView()
-                VStack{
-                    TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
-                }.padding(.leading)
+                VStack(alignment: .leading){
+                    TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
+                    TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
+                    TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
+                    TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
+                    TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程",timeLineImageContent: "timeline_profile_image_lu_photo1")
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
+                }
+                .padding(.horizontal)
             }
         }.ignoresSafeArea()
          .navigationTitle("朋友圈")
@@ -23,16 +33,21 @@ struct TimelineView: View {
 }
 
 struct TimeLineContent: View {
-    var profilePicture:String
-    var userName:String
-    var timeLineContent:String
+    var profilePicture: String
+    var userName: String
+    var timeLineTextContent: String
+    var timeLineImageContent: String?
     var body: some View{
         HStack(alignment:.top){
             Image(profilePicture).resizable().frame(width: 50,height: 50).aspectRatio(contentMode:.fit)
             VStack(alignment: .leading){
                 Text(userName).font(.headline)
                 Spacer()
-                Text(timeLineContent)
+                Text(timeLineTextContent)
+                if timeLineImageContent != nil {
+                    Spacer()
+                    Image(timeLineImageContent!).resizable().aspectRatio(contentMode: .fit)
+                }
             }
         }
     }
