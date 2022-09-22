@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State var isAlertShow: Bool = false
     var body: some View {
         NavigationView{
             List(){
@@ -31,7 +32,14 @@ struct ProfileView: View {
                             ListCell(imageName: "menucard",optionText: "卡包")
                         })
                     NavigationLink(
-                        destination: {SettingView()},
+                        destination: {
+                            SettingView()
+                                .onAppear{
+                                    isAlertShow = true
+                                }
+                            .alert("欢迎进入设置页面",isPresented: $isAlertShow){
+                                Button("确定",role: .cancel){}
+                            }},
                         label: {
                             ListCell(imageName: "gearshape",optionText: "设置")
                         })
