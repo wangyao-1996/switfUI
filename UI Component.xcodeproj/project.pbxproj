@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236A0DF128DC160E00947E5D /* TimeLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */; };
 		236FB65428D7765C00992658 /* myInfoPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB65328D7765C00992658 /* myInfoPicture.swift */; };
 		23B1F97228DAB735007DBA3A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F97128DAB735007DBA3A /* SettingView.swift */; };
 		23B1F97428DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineHeaderView.swift; sourceTree = "<group>"; };
 		236FB65328D7765C00992658 /* myInfoPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfoPicture.swift; sourceTree = "<group>"; };
 		23B1F97128DAB735007DBA3A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewForRotation.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE3807B279A8BB200A19AE4 /* TimelineView.swift */,
+				236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				B213226D28C748F700281249 /* ProfileHeaderView.swift in Sources */,
 				8EDB1A80279A80F7001600B5 /* UI_ComponentApp.swift in Sources */,
 				8EE3807C279A8BB200A19AE4 /* TimelineView.swift in Sources */,
+				236A0DF128DC160E00947E5D /* TimeLineHeaderView.swift in Sources */,
 				B213227828C9999B00281249 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

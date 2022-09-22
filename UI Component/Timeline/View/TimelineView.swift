@@ -9,7 +9,14 @@ import SwiftUI
 
 struct TimelineView: View {
     var body: some View {
-        Text("TimelineView")
+        ScrollView(){
+            TimelineHeaderView()
+            VStack{
+                Text("1")
+            }
+        }.ignoresSafeArea()
+         .navigationTitle("朋友圈")
+         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
