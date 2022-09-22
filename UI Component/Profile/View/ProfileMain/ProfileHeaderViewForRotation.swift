@@ -27,12 +27,13 @@ extension View {
 struct ProfileHeaderViewForRatation: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @State var orientation: UIDeviceOrientation = .portrait
+    var userName: String = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
     var body: some View {
         HStack{
             Image("timeline_profile_image")
                 .resizable().circleForRation()
             VStack(alignment: .leading){
-                Text("桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪")
+                Text(userName)
                     .font(.title2)
                     .lineLimit(2)
                 if horizontalSizeClass == .regular{
