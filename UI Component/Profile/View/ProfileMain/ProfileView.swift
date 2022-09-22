@@ -39,7 +39,7 @@ struct ProfileView: View {
             }
             .navigationTitle("我的")
             .navigationBarTitleDisplayMode(.inline)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
