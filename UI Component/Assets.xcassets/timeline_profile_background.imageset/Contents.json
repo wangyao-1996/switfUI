@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "timeline_profile_background.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "timeline_profile_background.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
