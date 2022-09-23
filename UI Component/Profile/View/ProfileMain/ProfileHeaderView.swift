@@ -1,54 +1,93 @@
 //
-//  ProfileHeaderView.swift
+//  ProfileHeaderViewForRotation.swift
 //  UI Component
 //
-//  Created by Jiaxin Pu on 2022/9/6.
+//  Created by wangyao on 2022/9/21.
 //
 
+import Foundation
 import SwiftUI
+
+struct RotateViewModifier: ViewModifier {
+    let action: (UIDeviceOrientation) -> Void
+    func body(content: Content) -> some View {
+        content
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)){ _ in
+                action(UIDevice.current.orientation)
+            }
+    }
+}
+
+extension View {
+    func onRate(perform action: @escaping (UIDeviceOrientation)->Void)->some View{
+        modifier(RotateViewModifier(action: action))
+    }
+}
 
 struct ProfileHeaderView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    @State var orientation: UIDeviceOrientation = .portrait
     var body: some View {
         HStack{
             Image("timeline_profile_image")
-                .resizable().circle()
+                .resizable().circleForRation()
             VStack(alignment: .leading){
                 Text("桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪")
                     .font(.title2)
                     .lineLimit(2)
                 if horizontalSizeClass == .regular{
                     VStack(alignment: .leading){
-                        HeaderView()
+                        if orientation.isLandscape{
+                            Text("微信号:XXXXXXXXXXXXXX")
+                                .foregroundColor(Color.gray)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
+                                .foregroundColor(Color.orange)
+                                .lineLimit(1)
+                            Text("个人爱好:写代码")
+                        } else {
+                            Text("微信号:XXXXXXXXXXXXXX")
+                                .foregroundColor(Color.gray)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
+                                .foregroundColor(Color.orange)
+                                .lineLimit(1)
+                        }
                     }.lineLimit(1)
                 } else {
                     HStack{
-                        HeaderView()
+                        if orientation.isLandscape{
+                            Text("微信号:XXXXXXXXXXXXXX")
+                                .foregroundColor(Color.gray)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
+                                .foregroundColor(Color.orange)
+                                .lineLimit(1)
+                            Text("个人爱好:写代码")
+                        } else {
+                            Text("微信号:XXXXXXXXXXXXXX")
+                                .foregroundColor(Color.gray)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
+                                .foregroundColor(Color.orange)
+                                .lineLimit(1)
+                        }
                     }
                 }
             }
+        }.onRate{ newOrientation in
+            orientation = newOrientation
         }
     }
 }
 
-struct HeaderView: View {
-    var body: some View {
-        Text("微信号:XXXXXXXXXXXXXX")
-            .foregroundColor(Color.gray)
-            .fixedSize(horizontal: true, vertical: false)
-        Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
-            .foregroundColor(Color.orange)
-            .lineLimit(1)
-    }
-}
-
 extension Image {
-    func circle() -> some View {
+    func circleForRation() -> some View {
         modifier(CircleModifier())
     }
 }
 
-struct CircleModifier : ViewModifier{
+struct CircleModifier: ViewModifier{
     @State var lineWidth = CGFloat(4)
     @State var shadowRadius = CGFloat(7)
     @State var imageSize : [CGFloat] = [50 , 50]
@@ -74,10 +113,8 @@ struct CircleModifier : ViewModifier{
     }
 }
 
-struct ProfileHeaderView_Previews: PreviewProvider {
+struct ProfileHeaderViewForRation_Previews: PreviewProvider {
     static var previews: some View {
         ProfileHeaderView()//.environment(\.horizontalSizeClass, .regular)
     }
 }
-
-

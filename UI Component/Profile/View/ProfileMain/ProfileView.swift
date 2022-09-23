@@ -12,7 +12,7 @@ struct ProfileView: View {
         NavigationView{
             List(){
                 Section(){
-                    ProfileHeaderViewForRatation()
+                    ProfileHeaderView()
                 }
                 Section(){
                     NavigationLink(
