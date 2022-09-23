@@ -5,33 +5,57 @@
 //  Created by Jiaxin Pu on 2022/9/6.
 //
 
+import Foundation
 import SwiftUI
 
 struct ProfileHeaderView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    @State var orientation: UIDeviceOrientation = .portrait
+    var userName: String = "a"
     var body: some View {
         HStack{
             Image("timeline_profile_image")
-                .resizable().circle()
+                .resizable()
+                .circle()
             VStack(alignment: .leading){
-                Text("桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪")
+                Text(userName)
                     .font(.title2)
                     .lineLimit(2)
                 if horizontalSizeClass == .regular{
                     VStack(alignment: .leading){
-                        HeaderView()
+                        userInfo()
+                        if orientation.isLandscape{
+                            Text("个人爱好:写代码")
+                        }
                     }.lineLimit(1)
                 } else {
                     HStack{
-                        HeaderView()
+                        userInfo()
+                        if orientation.isLandscape{
+                            Text("个人爱好:写代码")
+                        }
                     }
                 }
             }
+        }.onRate{ newOrientation in
+            orientation = newOrientation
         }
     }
 }
 
-struct HeaderView: View {
+extension Image {
+    func circle() -> some View {
+        modifier(CircleModifier())
+    }
+}
+
+extension View {
+    func onRate(perform action: @escaping (UIDeviceOrientation)->Void)->some View{
+        modifier(RotateViewModifier(action: action))
+    }
+}
+
+struct userInfo: View {
     var body: some View {
         Text("微信号:XXXXXXXXXXXXXX")
             .foregroundColor(Color.gray)
@@ -42,42 +66,8 @@ struct HeaderView: View {
     }
 }
 
-extension Image {
-    func circle() -> some View {
-        modifier(CircleModifier())
-    }
-}
-
-struct CircleModifier : ViewModifier{
-    @State var lineWidth = CGFloat(4)
-    @State var shadowRadius = CGFloat(7)
-    @State var imageSize : [CGFloat] = [50 , 50]
-    
-    func body(content: Content) -> some View {
-        content
-            .clipShape(Circle())
-            .overlay {
-                Circle().stroke(.orange,
-                                lineWidth: lineWidth)
-            }
-            .shadow(radius: shadowRadius)
-            .aspectRatio(contentMode: .fit)
-            .frame(width: imageSize[0],height: imageSize[1],alignment: .topLeading)
-            .animation(.default.repeatForever(), value: lineWidth)
-            .animation(.default.repeatForever(), value: shadowRadius)
-            //.animation(.default.repeatForever(), value: imageSize)
-            .onAppear{
-                lineWidth = 2
-                shadowRadius = 3
-                //imageSize = [30,30]
-            }
-    }
-}
-
-struct ProfileHeaderView_Previews: PreviewProvider {
+struct ProfileHeaderViewForRation_Previews: PreviewProvider {
     static var previews: some View {
         ProfileHeaderView()//.environment(\.horizontalSizeClass, .regular)
     }
 }
-
-

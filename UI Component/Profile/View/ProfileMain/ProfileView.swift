@@ -13,19 +13,19 @@ struct ProfileView: View {
     @State var userName: String = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
     var body: some View {
         NavigationView{
-            List(){
-                Section(){
-                    ProfileHeaderViewForRatation(userName: userName).onChange(of: scenePhase){ TextChangeValue in
-                        switch TextChangeValue{
+            List{
+                Section{
+                    ProfileHeaderView(userName: userName).onChange(of: scenePhase){ TextChangeValue in
+                        switch TextChangeValue {
                         case .active:
                             userName = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
-                        case .inactive :
+                        case .inactive:
                             userName = "用户昵称保密"
                         default: break
                         }
                     }
                 }
-                Section(){
+                Section{
                     NavigationLink(
                         destination: {EmptyView()},
                         label: {
@@ -43,7 +43,7 @@ struct ProfileView: View {
                         })
                     NavigationLink(
                         destination: {
-                            SettingView()
+                            SettingsView()
                                 .onAppear{
                                     isAlertShow = true
                                 }
