@@ -30,47 +30,24 @@ struct ProfileHeaderView: View {
     var body: some View {
         HStack{
             Image("timeline_profile_image")
-                .resizable().circleForRation()
+                .resizable()
+                .circle()
             VStack(alignment: .leading){
                 Text("桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪")
                     .font(.title2)
                     .lineLimit(2)
                 if horizontalSizeClass == .regular{
                     VStack(alignment: .leading){
+                        userInfo()
                         if orientation.isLandscape{
-                            Text("微信号:XXXXXXXXXXXXXX")
-                                .foregroundColor(Color.gray)
-                                .fixedSize(horizontal: true, vertical: false)
-                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
-                                .foregroundColor(Color.orange)
-                                .lineLimit(1)
                             Text("个人爱好:写代码")
-                        } else {
-                            Text("微信号:XXXXXXXXXXXXXX")
-                                .foregroundColor(Color.gray)
-                                .fixedSize(horizontal: true, vertical: false)
-                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
-                                .foregroundColor(Color.orange)
-                                .lineLimit(1)
                         }
                     }.lineLimit(1)
                 } else {
                     HStack{
+                        userInfo()
                         if orientation.isLandscape{
-                            Text("微信号:XXXXXXXXXXXXXX")
-                                .foregroundColor(Color.gray)
-                                .fixedSize(horizontal: true, vertical: false)
-                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
-                                .foregroundColor(Color.orange)
-                                .lineLimit(1)
                             Text("个人爱好:写代码")
-                        } else {
-                            Text("微信号:XXXXXXXXXXXXXX")
-                                .foregroundColor(Color.gray)
-                                .fixedSize(horizontal: true, vertical: false)
-                            Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
-                                .foregroundColor(Color.orange)
-                                .lineLimit(1)
                         }
                     }
                 }
@@ -82,10 +59,22 @@ struct ProfileHeaderView: View {
 }
 
 extension Image {
-    func circleForRation() -> some View {
+    func circle() -> some View {
         modifier(CircleModifier())
     }
 }
+
+struct userInfo: View {
+    var body: some View {
+        Text("微信号:XXXXXXXXXXXXXX")
+            .foregroundColor(Color.gray)
+            .fixedSize(horizontal: true, vertical: false)
+        Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
+            .foregroundColor(Color.orange)
+            .lineLimit(1)
+    }
+}
+
 
 struct CircleModifier: ViewModifier{
     @State var lineWidth = CGFloat(4)
