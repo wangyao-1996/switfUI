@@ -7,6 +7,7 @@
 
 import SwiftUI
 //
+//
 struct ProfileView: View {
     @State var isAlertShow: Bool = false
     @Environment(\.scenePhase) var scenePhase
