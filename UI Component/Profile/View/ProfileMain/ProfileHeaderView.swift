@@ -8,22 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct RotateViewModifier: ViewModifier {
-    let action: (UIDeviceOrientation) -> Void
-    func body(content: Content) -> some View {
-        content
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)){ _ in
-                action(UIDevice.current.orientation)
-            }
-    }
-}
-
-extension View {
-    func onRate(perform action: @escaping (UIDeviceOrientation)->Void)->some View{
-        modifier(RotateViewModifier(action: action))
-    }
-}
-
 struct ProfileHeaderView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @State var orientation: UIDeviceOrientation = .portrait
@@ -64,6 +48,12 @@ extension Image {
     }
 }
 
+extension View {
+    func onRate(perform action: @escaping (UIDeviceOrientation)->Void)->some View{
+        modifier(RotateViewModifier(action: action))
+    }
+}
+
 struct userInfo: View {
     var body: some View {
         Text("微信号:XXXXXXXXXXXXXX")
@@ -72,33 +62,6 @@ struct userInfo: View {
         Text("个人签名:我是一个桃子猪我是一个桃子猪我是一个桃子猪")
             .foregroundColor(Color.orange)
             .lineLimit(1)
-    }
-}
-
-
-struct CircleModifier: ViewModifier{
-    @State var lineWidth = CGFloat(4)
-    @State var shadowRadius = CGFloat(7)
-    @State var imageSize : [CGFloat] = [50 , 50]
-    
-    func body(content: Content) -> some View {
-        content
-            .clipShape(Circle())
-            .overlay {
-                Circle().stroke(.orange,
-                                lineWidth: lineWidth)
-            }
-            .shadow(radius: shadowRadius)
-            .aspectRatio(contentMode: .fit)
-            .frame(width: imageSize[0],height: imageSize[1],alignment: .topLeading)
-            .animation(.default.repeatForever(), value: lineWidth)
-            .animation(.default.repeatForever(), value: shadowRadius)
-            //.animation(.default.repeatForever(), value: imageSize)
-            .onAppear{
-                lineWidth = 2
-                shadowRadius = 3
-                //imageSize = [30,30]
-            }
     }
 }
 
