@@ -16,7 +16,7 @@ struct TimelineView: View {
                     TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
                     TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
                     TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
-                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？",likeArray: ["草莓兔","芒果鹿"])
+                    TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？",likeArray: ["草莓兔","芒果鹿","芒果鹿","芒果鹿","芒果鹿","芒果鹿","芒果鹿"])
                     TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
                     TimeLineContent(profilePicture: "timeline_profile_image_tu", userName: "草莓兔", timeLineTextContent: "你这个年纪睡得着觉？")
                     TimeLineContent(profilePicture: "timeline_profile_image", userName: "桃子猪", timeLineTextContent: "编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程编程真有意思，我爱编程")
@@ -65,17 +65,13 @@ struct TimeLineContent: View {
                         Image(timeLineImageContent!).resizable().aspectRatio(contentMode: .fit)
                     }
                     Spacer()
-                    HStack(){
+                HStack(alignment: .top){
                         Button(action:{
                             changeLikeLabelStyle()
                         }){
                             Image(systemName: likeIcon).foregroundColor(.red)
                         }
-                        
-                        ForEach(likeArray,id: \.self){ id in
-                            Text("\(id)").font(.body).foregroundColor(Color.white)
-                        }
-                        
+                        Text(stringArrayToString(likeArray)).foregroundColor(.white)
                         Spacer()
                     }
                     .background(likeArray.isEmpty ? Color.white : Color.gray)

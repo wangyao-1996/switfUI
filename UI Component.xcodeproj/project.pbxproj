@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		236A0DF128DC160E00947E5D /* TimeLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */; };
+		236A0DF928DD8F8700947E5D /* stringArrayToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A0DF828DD8F8700947E5D /* stringArrayToString.swift */; };
 		236FB65428D7765C00992658 /* myInfoPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB65328D7765C00992658 /* myInfoPicture.swift */; };
 		23B1F97228DAB735007DBA3A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F97128DAB735007DBA3A /* SettingView.swift */; };
 		23B1F97428DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineHeaderView.swift; sourceTree = "<group>"; };
+		236A0DF828DD8F8700947E5D /* stringArrayToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringArrayToString.swift; sourceTree = "<group>"; };
 		236FB65328D7765C00992658 /* myInfoPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfoPicture.swift; sourceTree = "<group>"; };
 		23B1F97128DAB735007DBA3A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewForRotation.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236A0DF728DD8F5900947E5D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				236A0DF828DD8F8700947E5D /* stringArrayToString.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		23B1F97028DAB70F007DBA3A /* ListContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		8EFF8CEE279AAAAD00956FA1 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				236A0DF728DD8F5900947E5D /* Utils */,
 				8EFF8CEF279AAB2C00956FA1 /* View */,
 			);
 			path = Timeline;
@@ -260,6 +271,7 @@
 				B213226F28C74A1500281249 /* ProfileView.swift in Sources */,
 				8EDB1A82279A80F7001600B5 /* HomeView.swift in Sources */,
 				23B1F97428DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift in Sources */,
+				236A0DF928DD8F8700947E5D /* stringArrayToString.swift in Sources */,
 				236FB65428D7765C00992658 /* myInfoPicture.swift in Sources */,
 				B213227428C74C8800281249 /* ListItemModel.swift in Sources */,
 				B213226D28C748F700281249 /* ProfileHeaderView.swift in Sources */,
