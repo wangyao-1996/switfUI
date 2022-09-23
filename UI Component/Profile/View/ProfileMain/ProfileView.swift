@@ -31,7 +31,7 @@ struct ProfileView: View {
                             ListCell(imageName: "menucard",optionText: "卡包")
                         })
                     NavigationLink(
-                        destination: {SettingView()},
+                        destination: {SettingsView()},
                         label: {
                             ListCell(imageName: "gearshape",optionText: "设置")
                         })
