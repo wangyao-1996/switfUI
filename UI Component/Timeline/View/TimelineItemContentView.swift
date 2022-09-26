@@ -18,9 +18,13 @@ struct TimelineItemContentView: View {
     
     var body: some View{
         HStack(alignment:.top){
-            Image(viewModel.profilePicture).resizable().frame(width: 50,height: 50).aspectRatio(contentMode:.fit)
+            Image(viewModel.profilePicture)
+                .resizable()
+                .frame(width: 50,height: 50)
+                .aspectRatio(contentMode:.fit)
             VStack(alignment: .leading){
-                Text(viewModel.userName).font(.headline)
+                Text(viewModel.userName)
+                    .font(.headline)
                 Spacer()
                 Text(viewModel.timeLineTextContent)
                 if viewModel.timeLineImageContent != "" {
@@ -35,9 +39,11 @@ struct TimelineItemContentView: View {
                     Button(action:{
                         viewModel.changeLikeLabelStyle()
                     }){
-                        Image(systemName: viewModel.likeIcon).foregroundColor(.red)
+                        Image(systemName: viewModel.likeIcon)
+                            .foregroundColor(.red)
                     }
-                    Text(stringArrayToString(viewModel.likeArray)).foregroundColor(.white)
+                    Text(stringArrayToString(viewModel.likeArray))
+                        .foregroundColor(.white)
                     Spacer()
                 }
                 .background(viewModel.likeArray.isEmpty ? Color.white : Color.gray)//抽取method
