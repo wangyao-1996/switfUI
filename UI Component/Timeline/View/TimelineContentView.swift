@@ -16,7 +16,10 @@ struct TimelineContentView: View {
                 ForEach(viewModel.contents) {
                     TimelineItemContentView(timelineContent: $0)
                 }
-            }.onAppear(perform: {viewModel.loadData()})
+            }.onAppear(
+                perform: {
+                    viewModel.loadData()
+                })
         }
     }
 }
