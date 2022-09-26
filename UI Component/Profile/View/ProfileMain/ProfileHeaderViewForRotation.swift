@@ -27,7 +27,8 @@ extension View {
 struct ProfileHeaderViewForRatation: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @State var orientation: UIDeviceOrientation = .portrait
-    var userName: String = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
+    @Environment(\.scenePhase) var scenePhase
+    @State var userName: String = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
     var body: some View {
         HStack{
             Image("timeline_profile_image")
@@ -78,6 +79,15 @@ struct ProfileHeaderViewForRatation: View {
             }
         }.onRate{ newOrientation in
             orientation = newOrientation
+        }
+        .onChange(of: scenePhase){ TextChangeValue in
+            switch TextChangeValue{
+            case .active:
+                userName = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
+            case .inactive :
+                userName = "用户昵称保密"
+            default: break
+        }
         }
     }
 }

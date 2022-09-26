@@ -9,20 +9,12 @@ import SwiftUI
 
 struct ProfileView: View {
     @State var isAlertShow: Bool = false
-    @Environment(\.scenePhase) var scenePhase
-    @State var userName: String = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
     var body: some View {
         NavigationView{
             List(){
                 Section(){
-                    ProfileHeaderViewForRatation(userName: userName).onChange(of: scenePhase){ TextChangeValue in
-                        switch TextChangeValue{
-                        case .active:
-                            userName = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
-                        case .inactive :
-                            userName = "用户昵称保密"
-                        default: break
-                        }
+                    NavigationLink(destination: {EmptyView()}){
+                        ProfileHeaderViewForRatation(userName: "桃子猪")
                     }
                 }
                 Section(){
