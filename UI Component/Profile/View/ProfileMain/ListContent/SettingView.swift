@@ -19,7 +19,8 @@ struct SettingView: View {
                 Button(action: {
                     reader
                     .scrollTo(1, anchor: .center)},
-                       label: {Text("Back To Top")})
+                       label: {Text("Back To Top")
+                })
             }
         }
     }

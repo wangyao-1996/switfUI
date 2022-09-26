@@ -62,9 +62,13 @@ struct CircleModifier : ViewModifier{
             }
             .shadow(radius: shadowRadius)
             .aspectRatio(contentMode: .fit)
-            .frame(width: imageSize[0],height: imageSize[1],alignment: .topLeading)
-            .animation(.default.repeatForever(), value: lineWidth)
-            .animation(.default.repeatForever(), value: shadowRadius)
+            .frame(width: imageSize[0],
+                   height: imageSize[1],
+                   alignment: .topLeading)
+            .animation(.default.repeatForever(),
+                       value: lineWidth)
+            .animation(.default.repeatForever(),
+                       value: shadowRadius)
             //.animation(.default.repeatForever(), value: imageSize)
             .onAppear{
                 lineWidth = 2

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TimelineContentItemViewModel: ObservableObject {
     @Published var likeArray: [String] = []
@@ -20,11 +21,13 @@ class TimelineContentItemViewModel: ObservableObject {
         likeArray = timelineContent.likes
         profilePicture = timelineContent.avatarUrl
         userName = timelineContent.nickname
+        
         switch timelineContent.type{
         case .photoAndMessage(photo: let photo, message: let message):
             timeLineTextContent = message ?? ""
             timeLineImageContent = photo
             break
+            
         case .singleMessage(message: let messgae):
             timeLineTextContent = messgae
             break
@@ -41,5 +44,9 @@ class TimelineContentItemViewModel: ObservableObject {
             isMyLike = !isMyLike
             likeArray.remove(at:(likeArray.firstIndex(of: "桃子猪"))!)
         }
+    }
+    
+    func getLaberBackgroundColor() -> Color {
+        return likeArray.isEmpty ? Color.white : Color.gray
     }
 }

@@ -33,7 +33,7 @@ struct TimelineItemContentView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                Spacer()//code style
+                Spacer()
                 
                 HStack(alignment: .top){
                     Button(action:{
@@ -46,7 +46,7 @@ struct TimelineItemContentView: View {
                         .foregroundColor(.white)
                     Spacer()
                 }
-                .background(viewModel.likeArray.isEmpty ? Color.white : Color.gray)//抽取method
+                .background(viewModel.getLaberBackgroundColor())
             }
         }
     }
