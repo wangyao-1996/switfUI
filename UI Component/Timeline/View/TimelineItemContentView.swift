@@ -21,24 +21,26 @@ struct TimelineItemContentView: View {
             Image(viewModel.profilePicture).resizable().frame(width: 50,height: 50).aspectRatio(contentMode:.fit)
             VStack(alignment: .leading){
                 Text(viewModel.userName).font(.headline)
-                    Spacer()
+                Spacer()
                 Text(viewModel.timeLineTextContent)
                 if viewModel.timeLineImageContent != "" {
-                        Spacer()
-                    Image(viewModel.timeLineImageContent).resizable().aspectRatio(contentMode: .fit)
-                    }
                     Spacer()
+                    Image(viewModel.timeLineImageContent)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                Spacer()//code style
                 
                 HStack(alignment: .top){
-                        Button(action:{
-                            viewModel.changeLikeLabelStyle()
-                        }){
-                            Image(systemName: viewModel.likeIcon).foregroundColor(.red)
-                        }
-                    Text(stringArrayToString(viewModel.likeArray)).foregroundColor(.white)
-                        Spacer()
+                    Button(action:{
+                        viewModel.changeLikeLabelStyle()
+                    }){
+                        Image(systemName: viewModel.likeIcon).foregroundColor(.red)
                     }
-                .background(viewModel.likeArray.isEmpty ? Color.white : Color.gray)
+                    Text(stringArrayToString(viewModel.likeArray)).foregroundColor(.white)
+                    Spacer()
+                }
+                .background(viewModel.likeArray.isEmpty ? Color.white : Color.gray)//抽取method
             }
         }
     }
