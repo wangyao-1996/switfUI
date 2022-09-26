@@ -37,7 +37,7 @@ struct ProfileView: View {
                             ListCell(imageName: "shippingbox",optionText: "收藏")
                         })
                     NavigationLink(
-                        destination: {EmptyView()},
+                        destination: {CardBagView()},
                         label: {
                             ListCell(imageName: "menucard",optionText: "卡包")
                         })
