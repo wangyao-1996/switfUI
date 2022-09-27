@@ -46,7 +46,7 @@ struct TimelineItemContentView: View {
                         .foregroundColor(.white)
                     Spacer()
                 }
-                .background(LikeLabelBackGround())
+                .background(viewModel.LikeLabelBackGround())
             }
         }
     }
