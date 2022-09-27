@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TimelineHeaderView: View{
     @EnvironmentObject var defaultProfileModel: LoginedModelFromHomeView
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing){
             
@@ -18,7 +19,7 @@ struct TimelineHeaderView: View{
                 .aspectRatio(contentMode: .fit).padding(.bottom)
             
             HStack{
-                Text("桃子猪")
+                Text(defaultProfileModel.profile.nickname)
                     .font(.title)
                     .foregroundColor(.white)
                 Image(defaultProfileModel.profile.avatarUrl)
@@ -34,6 +35,6 @@ struct TimelineHeaderView: View{
 
 struct TimelineHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        TimelineHeaderView()
+        TimelineHeaderView().environmentObject(LoginedModelFromHomeView())
     }
 }

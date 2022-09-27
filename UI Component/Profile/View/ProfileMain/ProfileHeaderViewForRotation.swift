@@ -26,9 +26,11 @@ extension View {
 
 struct ProfileHeaderViewForRatation: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-    @State var orientation: UIDeviceOrientation = .portrait
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var defaultProfileModel: LoginedModelFromHomeView
+    @State var userNameColor: Color = .white
+    @State var orientation: UIDeviceOrientation = .portrait
     @State var userName: String = ""
     var body: some View {
         HStack{
@@ -38,6 +40,7 @@ struct ProfileHeaderViewForRatation: View {
                 Text(defaultProfileModel.profile.nickname)
                     .font(.title2)
                     .lineLimit(2)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 if horizontalSizeClass == .regular{
                     VStack(alignment: .leading){
                         if orientation.isLandscape{
@@ -127,6 +130,6 @@ struct CircleModifierForRation : ViewModifier{
 
 struct ProfileHeaderViewForRation_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderViewForRatation()//.environment(\.horizontalSizeClass, .regular)
+        ProfileHeaderViewForRatation().environmentObject(LoginedModelFromHomeView())//.environment(\.horizontalSizeClass, .regular)
     }
 }
