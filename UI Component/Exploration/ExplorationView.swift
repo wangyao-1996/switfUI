@@ -19,7 +19,7 @@ struct ExplorationView: View {
                         Icon: "circle.circle.fill"
                     )})
                 NavigationLink(destination: {
-                    GameView(date: getDate())
+                    GameView()
                 }, label: {
                     ListLabelView(
                         TextName: "游戏",
