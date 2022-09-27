@@ -69,6 +69,6 @@ struct ListCell: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()//.environment(\.horizontalSizeClass, .compact)
+        ProfileView().environmentObject(LoginedModelFromHomeView())//.environment(\.horizontalSizeClass, .compact)
     }
 }

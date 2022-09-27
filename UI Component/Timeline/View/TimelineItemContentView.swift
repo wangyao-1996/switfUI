@@ -13,7 +13,10 @@ struct TimelineItemContentView: View {
     @StateObject var viewModel: TimelineContentItemViewModel
     
     init(timelineContent: TimelineContent) {
-        _viewModel = StateObject(wrappedValue: TimelineContentItemViewModel(timelineContent: timelineContent))
+        _viewModel = StateObject(
+            wrappedValue: TimelineContentItemViewModel(
+                timelineContent: timelineContent
+            ))
     }
     
     var body: some View{

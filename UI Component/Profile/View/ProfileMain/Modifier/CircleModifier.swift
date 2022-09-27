@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircleModifier : ViewModifier{
+struct CircleModifierForRation : ViewModifier{
     @State var lineWidth = CGFloat(4)
     @State var shadowRadius = CGFloat(7)
     @State var imageSize : [CGFloat] = [50 , 50]
