@@ -15,9 +15,13 @@ struct CardBagView: View{
         VStack(alignment: .center){
             Text("当前的卡片号码:\(cardNumber)")
             TextField("请输入", text: $cardNumber)
-                .padding(5)
-                .border(.cyan)
-                .cornerRadius(3)
+            .padding(5)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                //.border(.cyan)
+                //.cornerRadius(3)
         }
         .padding(.horizontal, 40)
     }
