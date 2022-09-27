@@ -37,7 +37,7 @@ struct ProfileHeaderViewForRatation: View {
             Image(defaultProfileModel.profile.avatarUrl)
                 .resizable().circleForRation()
             VStack(alignment: .leading){
-                Text(defaultProfileModel.profile.nickname)
+                Text(userName)
                     .font(.title2)
                     .lineLimit(2)
                     .foregroundColor(colorScheme == .dark ? .white : .black)

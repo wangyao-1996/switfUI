@@ -27,6 +27,6 @@ struct TimelineView: View {
 
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        TimelineView()
+        TimelineView().environmentObject(LoginedModelFromHomeView())
     }
 }

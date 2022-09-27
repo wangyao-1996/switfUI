@@ -46,7 +46,7 @@ struct TimelineItemContentView: View {
                         .foregroundColor(.white)
                     Spacer()
                 }
-                .background(viewModel.likeArray.isEmpty ? Color.white : Color.gray)
+                .background(LikeLabelBackGround())
             }
         }
     }

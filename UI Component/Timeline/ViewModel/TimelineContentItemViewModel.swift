@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TimelineContentItemViewModel: ObservableObject {
     @Published var likeArray: [String] = []
@@ -41,5 +42,9 @@ class TimelineContentItemViewModel: ObservableObject {
             isMyLike = !isMyLike
             likeArray.remove(at:(likeArray.firstIndex(of: "桃子猪"))!)
         }
+    }
+    
+    func LikeLabelBackGround() -> Color {
+        return likeArray.isEmpty ? Color.white : Color.gray
     }
 }
