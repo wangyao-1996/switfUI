@@ -39,9 +39,9 @@ struct ProfileView: View {
                                 .onAppear{
                                     isAlertShow = true
                                 }
-                            .alert("欢迎进入设置页面",isPresented: $isAlertShow){
-                                Button("确定",role: .cancel){}
-                            }},
+                                .alert("欢迎进入设置页面",isPresented: $isAlertShow){
+                                    Button("确定",role: .cancel){}
+                                }},
                         label: {
                             ListCell(imageName: "gearshape",optionText: "设置")
                         })
