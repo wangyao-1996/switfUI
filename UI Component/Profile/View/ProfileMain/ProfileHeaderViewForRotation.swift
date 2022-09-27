@@ -25,6 +25,7 @@ extension View {
 }
 
 struct ProfileHeaderViewForRatation: View {
+    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Environment(\.scenePhase) var scenePhase
@@ -32,10 +33,12 @@ struct ProfileHeaderViewForRatation: View {
     @State var userNameColor: Color = .white
     @State var orientation: UIDeviceOrientation = .portrait
     @State var userName: String = ""
+    
     var body: some View {
         HStack{
             Image(defaultProfileModel.profile.avatarUrl)
-                .resizable().circleForRation()
+                .resizable()
+                .circleForRation()
             VStack(alignment: .leading){
                 Text(userName)
                     .font(.title2)
