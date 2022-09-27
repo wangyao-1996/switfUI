@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectionTab: HomeTab = .exploration
+    @StateObject var defaultProfileModel: LoginedModelFromHomeView = LoginedModelFromHomeView()
     
     var body: some View {
         TabView(selection: $selectionTab) {
@@ -33,7 +34,7 @@ struct HomeView: View {
                     Label("我", systemImage: "person.fill")
                 }
                 .tag(HomeTab.me)
-        }
+        }.environmentObject(defaultProfileModel)
     }
 }
 

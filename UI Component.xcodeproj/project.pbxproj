@@ -19,6 +19,10 @@
 		23BDAF1E28E15897000D7126 /* TimelineContentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF1D28E15897000D7126 /* TimelineContentItemViewModel.swift */; };
 		23BDAF2028E16F9B000D7126 /* TimelineItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF1F28E16F9B000D7126 /* TimelineItemContentView.swift */; };
 		23BDAF2228E175AD000D7126 /* TimelineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF2128E175AD000D7126 /* TimelineContentView.swift */; };
+		23BDAF2828E29876000D7126 /* LoginedModelFromHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF2728E29876000D7126 /* LoginedModelFromHomeView.swift */; };
+		23BDAF2B28E29BEE000D7126 /* CircleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF2A28E29BEE000D7126 /* CircleModifier.swift */; };
+		23BDAF2D28E29C5A000D7126 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF2C28E29C5A000D7126 /* HeaderView.swift */; };
+		23BDAF2F28E29D8B000D7126 /* ProfileAvatarModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDAF2E28E29D8B000D7126 /* ProfileAvatarModificationView.swift */; };
 		8EDB1A80279A80F7001600B5 /* UI_ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB1A7F279A80F7001600B5 /* UI_ComponentApp.swift */; };
 		8EDB1A82279A80F7001600B5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB1A81279A80F7001600B5 /* HomeView.swift */; };
 		8EDB1A84279A80FD001600B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDB1A83279A80FD001600B5 /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 		23BDAF1D28E15897000D7126 /* TimelineContentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineContentItemViewModel.swift; sourceTree = "<group>"; };
 		23BDAF1F28E16F9B000D7126 /* TimelineItemContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItemContentView.swift; sourceTree = "<group>"; };
 		23BDAF2128E175AD000D7126 /* TimelineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineContentView.swift; sourceTree = "<group>"; };
+		23BDAF2728E29876000D7126 /* LoginedModelFromHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginedModelFromHomeView.swift; sourceTree = "<group>"; };
+		23BDAF2A28E29BEE000D7126 /* CircleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleModifier.swift; sourceTree = "<group>"; };
+		23BDAF2C28E29C5A000D7126 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		23BDAF2E28E29D8B000D7126 /* ProfileAvatarModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarModificationView.swift; sourceTree = "<group>"; };
 		8EDB1A7C279A80F7001600B5 /* UI Component.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI Component.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDB1A7F279A80F7001600B5 /* UI_ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ComponentApp.swift; sourceTree = "<group>"; };
 		8EDB1A81279A80F7001600B5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -110,6 +118,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		23BDAF2628E2985A000D7126 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23BDAF2728E29876000D7126 /* LoginedModelFromHomeView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23BDAF2928E29BB6000D7126 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				23BDAF2A28E29BEE000D7126 /* CircleModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		8EDB1A73279A80F7001600B5 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +184,7 @@
 		8EFF8CEC279AAA9100956FA1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				23BDAF2628E2985A000D7126 /* Model */,
 				8EDB1A81279A80F7001600B5 /* HomeView.swift */,
 			);
 			path = Home;
@@ -225,10 +250,13 @@
 		B213227528C998C600281249 /* ProfileMain */ = {
 			isa = PBXGroup;
 			children = (
+				23BDAF2928E29BB6000D7126 /* Modifier */,
 				23B1F97028DAB70F007DBA3A /* ListContent */,
 				B213226C28C748F700281249 /* ProfileHeaderView.swift */,
+				23BDAF2C28E29C5A000D7126 /* HeaderView.swift */,
 				23B1F97328DB09F3007DBA3A /* ProfileHeaderViewForRotation.swift */,
 				B213226E28C74A1500281249 /* ProfileView.swift */,
+				23BDAF2E28E29D8B000D7126 /* ProfileAvatarModificationView.swift */,
 			);
 			path = ProfileMain;
 			sourceTree = "<group>";
@@ -311,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BDAF2B28E29BEE000D7126 /* CircleModifier.swift in Sources */,
 				23BDAF1C28E15190000D7126 /* Profile.swift in Sources */,
 				8EE3807A279A89B900A19AE4 /* ExplorationView.swift in Sources */,
 				23BDAF1328E146D9000D7126 /* CardBagView.swift in Sources */,
@@ -325,12 +354,15 @@
 				B213227428C74C8800281249 /* ListItemModel.swift in Sources */,
 				B213226D28C748F700281249 /* ProfileHeaderView.swift in Sources */,
 				23BDAF1728E14E9B000D7126 /* TimelineContent.swift in Sources */,
+				23BDAF2828E29876000D7126 /* LoginedModelFromHomeView.swift in Sources */,
 				8EDB1A80279A80F7001600B5 /* UI_ComponentApp.swift in Sources */,
 				8EE3807C279A8BB200A19AE4 /* TimelineView.swift in Sources */,
 				236A0DF128DC160E00947E5D /* TimeLineHeaderView.swift in Sources */,
 				23BDAF2228E175AD000D7126 /* TimelineContentView.swift in Sources */,
 				23BDAF1E28E15897000D7126 /* TimelineContentItemViewModel.swift in Sources */,
+				23BDAF2D28E29C5A000D7126 /* HeaderView.swift in Sources */,
 				B213227828C9999B00281249 /* SettingsView.swift in Sources */,
+				23BDAF2F28E29D8B000D7126 /* ProfileAvatarModificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

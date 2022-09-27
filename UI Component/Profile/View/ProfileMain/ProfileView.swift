@@ -13,7 +13,7 @@ struct ProfileView: View {
         NavigationView{
             List(){
                 Section(){
-                    NavigationLink(destination: {EmptyView()}){
+                    NavigationLink(destination: {ProfileAvatarModificationView()}){
                         ProfileHeaderViewForRatation(userName: "桃子猪")
                     }
                 }

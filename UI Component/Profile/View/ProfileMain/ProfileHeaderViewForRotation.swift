@@ -28,13 +28,14 @@ struct ProfileHeaderViewForRatation: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @State var orientation: UIDeviceOrientation = .portrait
     @Environment(\.scenePhase) var scenePhase
-    @State var userName: String = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
+    @EnvironmentObject var defaultProfileModel: LoginedModelFromHomeView
+    @State var userName: String = ""
     var body: some View {
         HStack{
-            Image("timeline_profile_image")
+            Image(defaultProfileModel.profile.avatarUrl)
                 .resizable().circleForRation()
             VStack(alignment: .leading){
-                Text(userName)
+                Text(defaultProfileModel.profile.nickname)
                     .font(.title2)
                     .lineLimit(2)
                 if horizontalSizeClass == .regular{
@@ -83,7 +84,7 @@ struct ProfileHeaderViewForRatation: View {
         .onChange(of: scenePhase){ TextChangeValue in
             switch TextChangeValue{
             case .active:
-                userName = "桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪桃子猪"
+                userName = defaultProfileModel.profile.nickname
             case .inactive :
                 userName = "用户昵称保密"
             default: break
