@@ -17,7 +17,7 @@ struct TimelineView: View {
                 }
                 .padding(.horizontal)
             }
-        }.ignoresSafeArea()
+        }.ignoresSafeArea(edges: .top)
          .navigationTitle("朋友圈")
          .navigationBarTitleDisplayMode(.inline)
     }

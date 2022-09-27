@@ -53,7 +53,7 @@ struct ProfileView: View {
     }
 }
 
-struct ListCell : View {
+struct ListCell: View {
     
     var imageName : String!
     var optionText : String!
