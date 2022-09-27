@@ -9,47 +9,50 @@ import SwiftUI
 
 struct ProfileView: View {
     @State var isAlertShow: Bool = false
+    @State var theme: Theme = .sky
     var body: some View {
-        NavigationView{
-            List(){
-                Section(){
-                    NavigationLink(destination: {ProfileAvatarModificationView()}){
-                        ProfileHeaderViewForRatation(userName: "桃子猪")
+        VStack{
+            NavigationView{
+                List{
+                    Section{
+                        NavigationLink(destination: {ProfileAvatarModificationView()}){
+                            ProfileHeaderViewForRatation(userName: "桃子猪")
+                        }
+                    }
+                    Section{
+                        NavigationLink(
+                            destination: {EmptyView()},
+                            label: {
+                                ListCell(imageName: "message.and.waveform", optionText: "服务")
+                            })
+                        NavigationLink(
+                            destination: {EmptyView()},
+                            label: {
+                                ListCell(imageName: "shippingbox",optionText: "收藏")
+                            })
+                        NavigationLink(
+                            destination: {CardBagView()},
+                            label: {
+                                ListCell(imageName: "menucard",optionText: "卡包")
+                            })
+                        NavigationLink(
+                            destination: {
+                                SettingView()
+                                    .onAppear{
+                                        isAlertShow = true
+                                    }
+                                    .alert("欢迎进入设置页面",isPresented: $isAlertShow){
+                                        Button("确定",role: .cancel){}
+                                    }},
+                            label: {
+                                ListCell(imageName: "gearshape",optionText: "设置")
+                            })
                     }
                 }
-                Section(){
-                    NavigationLink(
-                        destination: {EmptyView()},
-                        label: {
-                            ListCell(imageName: "message.and.waveform", optionText: "服务")
-                        })
-                    NavigationLink(
-                        destination: {EmptyView()},
-                        label: {
-                            ListCell(imageName: "shippingbox",optionText: "收藏")
-                        })
-                    NavigationLink(
-                        destination: {CardBagView()},
-                        label: {
-                            ListCell(imageName: "menucard",optionText: "卡包")
-                        })
-                    NavigationLink(
-                        destination: {
-                            SettingView()
-                                .onAppear{
-                                    isAlertShow = true
-                                }
-                                .alert("欢迎进入设置页面",isPresented: $isAlertShow){
-                                    Button("确定",role: .cancel){}
-                                }},
-                        label: {
-                            ListCell(imageName: "gearshape",optionText: "设置")
-                        })
-                }
-            }
-            .navigationTitle("我的")
-            .navigationBarTitleDisplayMode(.inline)
-        }.navigationViewStyle(StackNavigationViewStyle())
+                .navigationTitle("我的")
+                .navigationBarTitleDisplayMode(.inline)
+            }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 
