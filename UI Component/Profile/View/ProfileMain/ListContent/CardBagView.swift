@@ -37,13 +37,14 @@ struct CardBagView: View{
             TextField("请输入", text: $cardNumber)
                 .padding(5)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 5)
+                    RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.gray, lineWidth: 1)
                 )
                 .foregroundColor(avatarColor())
             Text("欢迎使用\(theme.rawValue)主题")
             //.border(.cyan)
             //.cornerRadius(3)
+            //.textFieldStyle(.roundedBorder)
         }
         .toolbar{
             Button {

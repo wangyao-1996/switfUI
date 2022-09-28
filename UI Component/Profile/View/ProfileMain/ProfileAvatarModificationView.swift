@@ -36,6 +36,7 @@ struct ProfileAvatarModificationView: View {
 
 struct ProfileAvatarModificationView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileAvatarModificationView().environmentObject(LoginedModelFromHomeView())
+        ProfileAvatarModificationView()
+            .environmentObject(LoginedModelFromHomeView())
     }
 }
