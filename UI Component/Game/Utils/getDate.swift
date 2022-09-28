@@ -7,12 +7,12 @@
 
 import Foundation
 
-func getDate() -> String {
+func getDate(_ date: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
     
     return dateFormatter.string(
-        from: Date()
+        from: date
             .addingTimeInterval(
                 TimeInterval(
                     NSTimeZone.system.secondsFromGMT())))

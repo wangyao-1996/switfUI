@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct StepPlateView: View {
+    
+    init(){
+        print("Creat StepPlateView")
+    }
+    
     @StateObject var stepModel = Model()
     var body: some View {
         VStack {

@@ -10,7 +10,6 @@
 		232A0F0828E2D40C00A9D6DA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A0F0728E2D40C00A9D6DA /* GameView.swift */; };
 		232A0F0D28E2DEA100A9D6DA /* getDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A0F0C28E2DEA100A9D6DA /* getDate.swift */; };
 		232A0F1028E2E67B00A9D6DA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A0F0F28E2E67B00A9D6DA /* Model.swift */; };
-		232A0F1228E2E6E300A9D6DA /* CurrentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A0F1128E2E6E300A9D6DA /* CurrentTimeView.swift */; };
 		232A0F1428E2E70700A9D6DA /* StepPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A0F1328E2E70700A9D6DA /* StepPlateView.swift */; };
 		236A0DF128DC160E00947E5D /* TimeLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */; };
 		236A0DF928DD8F8700947E5D /* stringArrayToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A0DF828DD8F8700947E5D /* stringArrayToString.swift */; };
@@ -43,7 +42,6 @@
 		232A0F0728E2D40C00A9D6DA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		232A0F0C28E2DEA100A9D6DA /* getDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDate.swift; sourceTree = "<group>"; };
 		232A0F0F28E2E67B00A9D6DA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		232A0F1128E2E6E300A9D6DA /* CurrentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeView.swift; sourceTree = "<group>"; };
 		232A0F1328E2E70700A9D6DA /* StepPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPlateView.swift; sourceTree = "<group>"; };
 		236A0DF028DC160E00947E5D /* TimeLineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineHeaderView.swift; sourceTree = "<group>"; };
 		236A0DF828DD8F8700947E5D /* stringArrayToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringArrayToString.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				232A0F0728E2D40C00A9D6DA /* GameView.swift */,
-				232A0F1128E2E6E300A9D6DA /* CurrentTimeView.swift */,
 				232A0F1328E2E70700A9D6DA /* StepPlateView.swift */,
 			);
 			path = View;
@@ -388,7 +385,6 @@
 				8EE3807A279A89B900A19AE4 /* ExplorationView.swift in Sources */,
 				23BDAF1328E146D9000D7126 /* CardBagView.swift in Sources */,
 				23BDAF2028E16F9B000D7126 /* TimelineItemContentView.swift in Sources */,
-				232A0F1228E2E6E300A9D6DA /* CurrentTimeView.swift in Sources */,
 				23B1F97228DAB735007DBA3A /* SettingView.swift in Sources */,
 				B213226F28C74A1500281249 /* ProfileView.swift in Sources */,
 				8EDB1A82279A80F7001600B5 /* HomeView.swift in Sources */,
