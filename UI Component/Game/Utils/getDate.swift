@@ -9,11 +9,9 @@ import Foundation
 
 func getDate(_ date: Date) -> String {
     let dateFormatter = DateFormatter()
+    //dateFormatter.locale = Locale(identifier: "zh_CN" )
+    dateFormatter.timeZone = TimeZone.current
     dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
     
-    return dateFormatter.string(
-        from: date
-            .addingTimeInterval(
-                TimeInterval(
-                    NSTimeZone.system.secondsFromGMT())))
+    return dateFormatter.string(from: date)
 }
